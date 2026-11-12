@@ -4,14 +4,14 @@ matriks2 = [[1,2],[3,4],[1,3]]
 def ukuran_matriks(value,ukuran=None):
     if ukuran==None:
         ukuran = {}
-        baris = len(value)
+        kolom = len(value)
+        ukuran["kolom"]=kolom
     for matriks in value:
-        if len(matriks)==len(value[0]):
-            pass
-        else:
-            print("panjang baris anda tidak sama")
-    print("panjang baris sama")
-ukuran_matriks(values)
+        if len(matriks)!=len(value[0]):
+            print("panjang antar baris anda tidak sama")
+    ukuran["baris"]=len(value[0])
+    print(ukuran)
+ukuran_matriks(matriks2)
 if len(matriks1) == len(matriks2):
     for isi1 in matriks1 : 
         for isi2 in matriks2 : 
