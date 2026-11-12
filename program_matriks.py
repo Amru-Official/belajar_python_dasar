@@ -1,6 +1,8 @@
 matriks1 = [[1,2],[4,5]]
 matriks2 = [[1,2],[3,4],[1,3]]
+# matriks2 = [[1,2],[3,4],[1,3]] baris 2 kolom 3
 
+# fungsi menghitung ukuran matriks
 def ukuran_matriks(value,ukuran=None):
     if ukuran==None:
         ukuran = {}
@@ -10,8 +12,24 @@ def ukuran_matriks(value,ukuran=None):
         if len(matriks)!=len(value[0]):
             print("panjang antar baris anda tidak sama")
     ukuran["baris"]=len(value[0])
-    print(ukuran)
-ukuran_matriks(matriks2)
+    # print(ukuran)
+    return ukuran
+
+ukuran_matriks1=ukuran_matriks(matriks1)
+ukuran_matriks2=ukuran_matriks(matriks2)
+print(ukuran_matriks2.get("kolom"))
+
+# fungsi membandingkan ukuran matriks
+def bandingkan_ukuran(value1,value2):
+    if value1.get("baris")==value2.get("baris") and value1.get("kolom")==value2.get("kolom"):
+        return True
+    else: 
+        print("ukuran matriks berbeda")
+        return False
+    
+print(bandingkan_ukuran(ukuran_matriks1,ukuran_matriks2))
+
+
 if len(matriks1) == len(matriks2):
     for isi1 in matriks1 : 
         for isi2 in matriks2 : 
